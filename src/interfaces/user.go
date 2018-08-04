@@ -1,9 +1,13 @@
 package interfaces
 
-import "net/http"
+import (
+	"net/http"
+
+	"github.com/takochuu/go-cleanarchitecture/src/usecases"
+)
 
 type UserInterface interface {
-	Create() error
+	Create() (*usecases.User, error)
 }
 
 type UserHandler struct {

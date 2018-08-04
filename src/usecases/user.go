@@ -6,6 +6,6 @@ type User struct {
 	ID int
 }
 
-func (u UserUseCase) Create() error {
-	return nil
+func (u UserUseCase) Create() (*User, error) {
+	return nil, nil
 }
