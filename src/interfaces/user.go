@@ -11,4 +11,5 @@ type UserHandler struct {
 }
 
 func (h UserHandler) Create(res http.ResponseWriter, req *http.Request) {
+	h.UserInterface.Create()
 }
