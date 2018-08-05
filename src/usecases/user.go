@@ -1,11 +1,25 @@
 package usecases
 
-type UserUseCase struct{}
+import "github.com/takochuu/go-cleanarchitecture/src/domains"
 
-type User struct {
-	ID int
+type UserUseCase struct {
+	repo UserInterface
 }
 
-func (u UserUseCase) Create() (*User, error) {
-	return nil, nil
+type UserInterface interface {
+	Create() (*domains.User, error)
+}
+
+func NewUserUseCase(r UserInterface) *UserUseCase {
+	return &UserUseCase{
+		repo: r,
+	}
+}
+
+func (u UserUseCase) Create() (*domains.User, error) {
+	user, err := u.repo.Create()
+	if err != nil {
+		return nil, err
+	}
+	return user, nil
 }

@@ -3,6 +3,7 @@ package main
 import (
 	"net/http"
 
+	"github.com/takochuu/go-cleanarchitecture/src/infrastructure/repository"
 	"github.com/takochuu/go-cleanarchitecture/src/interfaces"
 	"github.com/takochuu/go-cleanarchitecture/src/usecases"
 )
@@ -10,9 +11,10 @@ import (
 func main() {
 
 	// TODO Router化
-	h := interfaces.UserHandler{}
-	h.UserInterface = &usecases.UserUseCase{}
 	http.HandleFunc("/", func(res http.ResponseWriter, req *http.Request) {
+		h := interfaces.UserHandler{}
+		u := repository.NewUserRepository()
+		h.UserUseCase = usecases.NewUserUseCase(u)
 		h.Create(res, req)
 	})
 }
