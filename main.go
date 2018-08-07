@@ -2,6 +2,7 @@ package main
 
 import (
 	"net/http"
+	_ "net/http/pprof"
 
 	"github.com/takochuu/go-cleanarchitecture/src/infrastructure/repository"
 	"github.com/takochuu/go-cleanarchitecture/src/interfaces"
@@ -17,4 +18,6 @@ func main() {
 		h.UserUseCase = usecases.NewUserUseCase(u)
 		h.Create(res, req)
 	})
+
+	http.ListenAndServe(":16000", nil)
 }
