@@ -1,6 +1,6 @@
 package usecase
 
-import "github.com/takochuu/go-cleanarchitecture/src/domain/entity"
+import "github.com/takochuu/go-cleanarchitecture/domain/entity"
 
 type UserUseCase struct {
 	repo UserInterface

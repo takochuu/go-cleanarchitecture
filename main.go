@@ -4,9 +4,9 @@ import (
 	"net/http"
 	_ "net/http/pprof"
 
-	"github.com/takochuu/go-cleanarchitecture/src/infrastructure/repository"
-	"github.com/takochuu/go-cleanarchitecture/src/interfaces"
-	"github.com/takochuu/go-cleanarchitecture/src/usecase"
+	"github.com/takochuu/go-cleanarchitecture/infrastructure/repository"
+	"github.com/takochuu/go-cleanarchitecture/interfaces"
+	"github.com/takochuu/go-cleanarchitecture/usecase"
 )
 
 func main() {

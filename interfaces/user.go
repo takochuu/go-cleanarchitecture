@@ -3,7 +3,7 @@ package interfaces
 import (
 	"net/http"
 
-	"github.com/takochuu/go-cleanarchitecture/src/domain/entity"
+	"github.com/takochuu/go-cleanarchitecture/domain/entity"
 )
 
 type UserUseCase interface {
