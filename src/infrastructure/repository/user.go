@@ -1,6 +1,6 @@
 package repository
 
-import "github.com/takochuu/go-cleanarchitecture/src/domains"
+import "github.com/takochuu/go-cleanarchitecture/src/domain/entity"
 
 type UserRepository struct {
 }
@@ -9,6 +9,6 @@ func NewUserRepository() *UserRepository {
 	return &UserRepository{}
 }
 
-func (r *UserRepository) Create() (*domains.User, error) {
-	return &domains.User{}, nil
+func (r *UserRepository) Create() (*entity.User, error) {
+	return &entity.User{}, nil
 }

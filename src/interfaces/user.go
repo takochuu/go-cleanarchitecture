@@ -3,11 +3,11 @@ package interfaces
 import (
 	"net/http"
 
-	"github.com/takochuu/go-cleanarchitecture/src/domains"
+	"github.com/takochuu/go-cleanarchitecture/src/domain/entity"
 )
 
 type UserUseCase interface {
-	Create() (*domains.User, error)
+	Create() (*entity.User, error)
 }
 
 type UserHandler struct {
